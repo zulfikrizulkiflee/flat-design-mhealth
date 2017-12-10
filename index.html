@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link type="text/css" href="css/jquery.mobile.custom.structure.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.js"></script>
+    <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+    <!----Calender -------->
+    <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+    <script src="js/underscore-min.js"></script>
+    <script src="js/moment-2.2.1.js"></script>
+    <script src="js/clndr.js"></script>
+    <script src="js/site.js"></script>
+    <!----End Calender -------->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> </head>
+
+<body>
+    <!-- Start of personal input page -->
+    <div data-role="page" class="main" id="landing1">
+        <div class="wrap">
+            <div class="column_right_grid sign-in">
+                <div class="sign_in">
+                    <h3>Create your profile</h3>
+                    <form> <span>
+                            <i><img src="images/user.png" alt=""></i><input type="text" name="user_name" value="Enter your name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
+                            </span> <span>
+                            <i><img src="images/events.png" alt=""></i>
+                            <input type="number" name="user_age" placeholder="Age">
+                            </span> </form>
+                    <div class="signin_facebook">
+                        <p>
+                            <a href="#landing2"> <i> <img src="images/arrow-right.png" alt=""></i>Proceed</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of health input page -->
+    <div data-role="page" class="main" id="landing2">
+        <div class="wrap">
+            <div class="column_right_grid sign-in">
+                <div class="sign_in">
+                    <h3>Enter health details</h3>
+                    <form> <span>
+                        <i style="color: #9099B7">kg</i><input type="number" name="user_weight" placeholder="Weight">
+                        </span> <span>
+                        <i style="color: #9099B7">cm</i><input type="number" name="user_height" placeholder="Height">
+                        </span> </form>
+                    <div class="signin_facebook">
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#landing1"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#profile">Proceed <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of profile page -->
+    <div data-role="page" class="main" id="profile" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="header" style="margin-bottom: 15px;">
+                <div class="header_top">
+                    <div class="menu">
+                        <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+                        <ul class="nav" style="z-index: 9999;">
+                            <li><a href="#medicine"><i><img src="images/pills.png" alt="" /></i>My Medicine Note <span class="messages">5</span></a></li>
+                            <li><a href="#diet"><i><img src="images/cutlery.png" alt="" /></i>Sunnah Diet</a></li>
+                            <li><a href="#ruqyah"><i><img src="images/arabic-art.png" alt="" /></i>Ruqyah</a></li>
+                            <li><a href="#zikr"><i><img src="images/necklace.png" alt="" /></i>Zikr Reminder</a></li>
+                            <li><a href="#diagnose"><i><img src="images/phonendoscope.png" alt="" /></i>Diagonose Me</a></li>
+                            <div class="clear"></div>
+                        </ul>
+                        <script type="text/javascript" src="js/responsive-nav.js"></script>
+                    </div>
+                    <div class="profile_details">
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="column_middle_grid1">
+                <div class="profile_picture">
+                    <a href="#"><img src="images/profile_img150x150.jpg" alt=""> </a>
+                    <div class="profile_picture_name">
+                        <h2>Anne Hathaway</h2>
+                        <p><i> <img src="images/femenine.png" alt=""></i> 28</p>
+                    </div> <span><a href="#edit-profile"> <img src="images/edit.png" alt=""> </a></span> </div>
+                <div class="articles_list">
+                    <ul>
+                        <li>
+                            <a href="#edit-weight" class="red"> <i style="color: #9099B7">kg</i> 68</a>
+                        </li>
+                        <li>
+                            <a href="#edit-height" class="purple"> <i style="color: #9099B7">cm</i> 173</a>
+                        </li>
+                        <li>
+                            <a href="#bmi" class="yellow"> <i style="color: #9099B7">bmi</i> under</a>
+                        </li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of edit profile page -->
+    <div data-role="page" class="main" id="edit-profile" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_right_grid sign-in">
+                <div class="sign_in">
+                    <h3>Edit your profile</h3>
+                    <form> <span>
+                        <i><img src="images/user.png" alt=""></i><input type="text" name="user_name" value="Enter your name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
+                        </span> <span>
+                        <i><img src="images/events.png" alt=""></i>
+                        <input type="number" name="user_age" placeholder="Age">
+                        </span> </form>
+                    <div class="signin_facebook">
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of edit weight page -->
+    <div data-role="page" class="main" id="edit-weight" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_right_grid sign-in" style="margin-top: 0;">
+                <div class="sign_in">
+                    <h3>Update your weight</h3>
+                    <form> <span>
+                        <i style="color: #9099B7">kg</i><input type="number" name="user_weight" placeholder="Weight">
+                        </span> </form>
+                    <div class="signin_facebook">
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column_middle">
+                <div class="weather">
+                    <div class="temp_list">
+                        <ul>
+                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
+                                <label class="digits"><i> <img src="images/drop.png" alt="" width="16" height="16"></i> 68 <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
+                                <label class="digits"><i> <img src="images/increase.png" alt="" width="16" height="16"></i> 67 <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of edit height page -->
+    <div data-role="page" class="main" id="edit-height" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_right_grid sign-in" style="margin-top: 0;">
+                <div class="sign_in">
+                    <h3>Update your height</h3>
+                    <form> <span>
+                        <i style="color: #9099B7">kg</i><input type="number" name="user_height" placeholder="Height">
+                        </span> </form>
+                    <div class="signin_facebook">
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                    </div>
+                </div>
+            </div>
+            <div class="column_middle">
+                <div class="weather">
+                    <div class="temp_list">
+                        <ul>
+                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
+                                <label class="digits">173 <i style="color: #9099B7">cm</i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
+                                <label class="digits">174 <i style="color: #9099B7">cm</i></label><div class="clear"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of bmi page -->
+    <div data-role="page" class="main" id="bmi" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle"> <span style="position: absolute;top: 10px;left: 10px;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
+                <div class="graph">
+                    <canvas id="line-chart" width="auto" style="width: 100%;margin: auto"> </canvas>
+                    <script>
+                        var lineChartData = {
+                            labels: ["Apr", "May", "Jun"]
+                            , datasets: [
+                                {
+                                    fillColor: "rgba(255, 255, 255, 0)"
+                                    , strokeColor: "#FFF"
+                                    , pointColor: "#11a8ab"
+                                    , pointStrokeColor: "#FFF"
+                                    , data: [21, 30, 35]
+                                }
+                            ]
+                        }
+                        var myLine = new Chart(document.getElementById("line-chart").getContext("2d")).Line(lineChartData);
+                    </script>
+                </div>
+                <div class="weather">
+                    <div class="temp_list">
+                        <ul>
+                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
+                                <label class="digits">healthy <i style="color: #9099B7">19</i> <i> <img src="images/unchanged.png" alt="" width="16" height="16"></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
+                                <label class="digits">under <i style="color: #9099B7">16</i> <i> <img src="images/drop.png" alt="" width="16" height="16"></i></label><div class="clear"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of medicine page -->
+    <div data-role="page" class="main" id="medicine" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top: 0">
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 15px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/pills-white.png" alt="" /> </i> Antibiotics</h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
+                    <div class="today_temp" style="position: relative;">
+                        <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
+                        <div class="temp">
+                            <figure>Fri 29/06<span>12:30<em>PM</em></span></figure>
+                        </div>
+                    </div>
+                    <div class="temp_list">
+                        <ul>
+                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
+                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;"> ANTIBIOTICS </label> <div class="clear"></div></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+</body>
+
+</html>
