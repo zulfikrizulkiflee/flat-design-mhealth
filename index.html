@@ -7,6 +7,7 @@
     <link type="text/css" href="css/jquery.mobile.custom.structure.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/nav.css" rel="stylesheet" type="text/css" media="all" />
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
@@ -14,6 +15,7 @@
     <script type="text/javascript" src="js/Chart.js"></script>
     <script type="text/javascript" src="js/jquery.easing.js"></script>
     <script type="text/javascript" src="js/jquery.ulslide.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <!----Calender -------->
     <link rel="stylesheet" href="css/clndr.css" type="text/css" />
     <script src="js/underscore-min.js"></script>
@@ -91,7 +93,7 @@
             </div>
             <div class="column_middle_grid1">
                 <div class="profile_picture">
-                    <a href="#"><img src="images/profile_img150x150.jpg" alt=""> </a>
+                    <a href="#update-image"><img src="images/profile_img150x150.jpg" alt=""> </a>
                     <div class="profile_picture_name">
                         <h2>Anne Hathaway</h2>
                         <p><i> <img src="images/femenine.png" alt=""></i> 28</p>
@@ -126,6 +128,23 @@
                         <i><img src="images/events.png" alt=""></i>
                         <input type="number" name="user_age" placeholder="Age">
                         </span> </form>
+                    <div class="signin_facebook">
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of update image page -->
+    <div data-role="page" class="main" id="update-image" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_right_grid sign-in" style="margin-top:0">
+                <div class="sign_in">
+                    <h3>Update Image</h3>
+                    <div class="profile_picture"><a><img src="images/profile_img150x150.jpg" alt=""></a></div>
+                    
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
                         <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
@@ -237,8 +256,7 @@
             <div class="column_middle" style="margin-top: 0">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 15px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/pills-white.png" alt="" /> </i> Antibiotics</h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
-                    <div class="today_temp" style="position: relative;">
-                        <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
+                    <div class="today_temp" style="position: relative;"> <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
                         <div class="temp">
                             <figure>Fri 29/06<span>12:30<em>PM</em></span></figure>
                         </div>
@@ -246,8 +264,7 @@
                     <div class="temp_list">
                         <ul>
                             <li><a href="#edit-medicine"><span class="day_name">Sat</span>&nbsp; 29/06 
-                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;"> ANTIBIOTICS </label> <div class="clear"></div></a>
-                            </li>
+                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;"> ANTIBIOTICS </label> <div class="clear"></div></a> </li>
                         </ul>
                     </div>
                 </div>
@@ -300,16 +317,13 @@
     <!-- Start of sunnah diet page -->
     <div data-role="page" class="main" id="diet" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_middle" style="margin-top:0;">        
-                <div class="tweets" style="margin-top:0;">
-                    <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Sunnah Diet</h3>		              
+            <div class="column_middle" style="margin-top:0;">
+                <div class="tweets" style="margin-top:0;"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Sunnah Diet</h3>
                     <div class="tweets_list">
                         <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore <a href="#">@Neque</a>
-                                <span>10 minutes ago</span></li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore eiusmod <a href="#">#Creative Cloud</a>
-                                <span>2 hours ago</span></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore <a href="#">@Neque</a> <span>10 minutes ago</span></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore eiusmod <a href="#">#Creative Cloud</a> <span>2 hours ago</span></li>
                         </ul>
                     </div>
                 </div>
@@ -320,11 +334,17 @@
     <!-- Start of ruqyah page -->
     <div data-role="page" class="main" id="ruqyah" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_middle" style="margin-top:0;">        
+            <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/arabic-art-white.png" alt="" width="24" height="24"/> </i> Ruqyah</h3>
                     <div class="today_temp">
-                        <img src="images/profile_img150x150.jpg" width="30%" height="100%">
+                        <div style="color: #fff;width:90%;margin:auto;"><span class="player-status" style="float:left;">Playing...</span><span style="float:right">Ruqyah 1</span></div>
+                        <audio id="player" controls style="width:90%;margin: auto">
+                            <source src="audio/Alex%20Sparrow%20-%20SHE'S%20CRAZY%20BUT%20SHE'S%20MINE%20(OFFICIAL%20VIDEO)%20-%20PRANKSTERS%20COUPLE.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <div style="width: 90%;margin:auto">
+                            <p style="width:80%;margin:auto;"> <span style="margin-right: 30px"><a onclick="document.getElementById('player').next()" ><img src="images/stop.png" alt="24" height="24" width=""></a><a onclick="document.getElementById('player').next()" ><img src="images/prev.png" alt="24" height="24" width=""></a>
+                                <a onclick="document.getElementById('player').prev()"><img src="images/next.png" alt="" height="24" width="24"></a> </span> <span><a onclick="document.getElementById('player').volume += 0.1"><img src="images/up-volume.png" alt="" height="" width=""></a> <a onclick="document.getElementById('player').volume -= 0.1"><img src="images/low-volume.png" alt="" height="" width=""></a><a onclick="document.getElementById('player').volume -= 1"><img src="images/mute-volume.png" alt="" height="" width=""></a></span> </p>
+                        </div>
                     </div>
                     <div class="temp_list">
                         <ul>
@@ -342,12 +362,10 @@
     <!-- Start of zikr page -->
     <div data-role="page" class="main" id="zikr" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_middle" style="margin-top:0;">        
+            <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/necklace-white.png" alt="" width="24" height="24"/> </i> Zikr Reminder</h3>
-                    <div class="today_temp">
-                        <img src="images/profile_img150x150.jpg" width="30%" height="100%">
-                    </div>
+                    <div class="today_temp"> <img src="images/profile_img150x150.jpg" width="30%" height="100%"> </div>
                     <div class="temp_list">
                         <ul>
                             <li><a href="#"><span class="day_name">Ruqyah 1</span>&nbsp; 2:35 
@@ -364,12 +382,10 @@
     <!-- Start of diagnose page -->
     <div data-role="page" class="main" id="diagnose" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_middle" style="margin-top:0;">        
+            <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Diagnose Me</h3>
-                    <div class="today_temp">
-                        <img src="images/profile_img150x150.jpg" width="30%" height="100%">
-                    </div>
+                    <div class="today_temp"> <img src="images/profile_img150x150.jpg" width="30%" height="100%"> </div>
                     <div class="temp_list">
                         <ul>
                             <li><a href="#"><span class="day_name">Ruqyah 1</span>&nbsp; 2:35 
@@ -383,6 +399,19 @@
         </div>
     </div>
     <!-- /page -->
+    <script>
+        function isPlaying() {
+            var player = document.getElementById('player');
+            return !player.paused && !player.ended && 0 < player.currentTime;
+        }
+        
+        if (isPlaying() == true) {
+            $('.player-status').html("Playing...");
+        }
+        else {
+            $('.player-status').html("Paused...");
+        }
+    </script>
 </body>
 
 </html>
