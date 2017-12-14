@@ -27,16 +27,32 @@
 
 <body>
     <!-- Start of personal input page -->
-    <div data-role="page" class="main" id="landing1">
+    <div data-role="page" class="main" id="landing1" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_right_grid sign-in">
-                <div class="sign_in">
+            <div class="column_right_grid sign-in" style="margin-top:0">
+                <div class="sign_in"> <img src="images/logo.png" alt="" height="20%" width="20%" style="margin-bottom:15px;">
                     <h3>Create your profile</h3>
                     <form> <span>
                             <i><img src="images/user.png" alt=""></i><input type="text" name="user_name" value="Enter your name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
                             </span> <span>
                             <i><img src="images/events.png" alt=""></i>
                             <input type="number" name="user_age" placeholder="Age">
+                            </span> <span style="color:#fff;text-align: left;padding:10px;">
+                                <i style="margin:0 5px;"><img src="images/gender.png" alt=""></i>
+                                <table style="width:70%;display:unset;">
+                            <tr>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" name="gender" value="male" checked> Male<i style="margin:0 5px;"><img src="images/masculine.png" alt=""></i></label>
+                                </td>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" name="gender" value="female"> Female<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
+                                </td>
+                            </tr>
+                        </table>
+                                
+                                
                             </span> </form>
                     <div class="signin_facebook">
                         <p>
@@ -49,15 +65,37 @@
     </div>
     <!-- /page -->
     <!-- Start of health input page -->
-    <div data-role="page" class="main" id="landing2">
+    <div data-role="page" class="main" id="landing2" style="padding-top:3%;">
         <div class="wrap">
-            <div class="column_right_grid sign-in">
-                <div class="sign_in">
+            <div class="column_right_grid sign-in" style="margin-top:0">
+                <div class="sign_in"> <img src="images/logo.png" alt="" height="20%" width="20%" style="margin-bottom:15px;">
                     <h3>Enter health details</h3>
                     <form> <span>
                         <i style="color: #9099B7">kg</i><input type="number" name="user_weight" placeholder="Weight">
                         </span> <span>
                         <i style="color: #9099B7">cm</i><input type="number" name="user_height" placeholder="Height">
+                        </span> <span class="known-cond" style="padding: 15px;color: #fff">
+                            <p>Known Medical Conditions</p>
+                            <p style="margin-top: 10px;">
+                                <table style="text-align: left;width: 100%">
+                                    <tr>
+                                        <td style="width:50%;">
+                                            <label><input type="checkbox" name="disease" value="diabetes"> Diabetes</label>
+                                        </td>
+                                        <td>
+                                            <label><input type="checkbox" name="disease" value="heart"> Heart</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:50%;">
+                                            <label><input type="checkbox" name="disease" value="respiratory"> Respiratory</label>
+                                        </td>
+                                        <td>
+                                            <label><input type="checkbox" name="disease" value="other"> Other</label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </p>
                         </span> </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#landing1"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
@@ -84,8 +122,11 @@
                             <div class="clear"></div>
                         </ul>
                         <script type="text/javascript" src="js/responsive-nav.js"></script>
-                    </div>
-                    <div class="profile_details">
+                    </div> <span style="position: absolute;text-align:center;margin: 25px 20px 20px 15px;color:#fff;font-size: 25px;text-transform:uppercase;">My Profile</span>
+                    <div class="profile_details" style="margin: 20px 20px 20px 15px;">
+                        <div class="profile_img">
+                            <a href="#"><img src="images/logo.png" alt="" style="width: 40px;height:40px;border-radius: 0;" /> </a>
+                        </div>
                         <div class="clear"></div>
                     </div>
                     <div class="clear"></div>
@@ -93,7 +134,7 @@
             </div>
             <div class="column_middle_grid1">
                 <div class="profile_picture">
-                    <a href="#update-image"><img src="images/profile_img150x150.jpg" alt=""> </a>
+                    <a href="#update-image"><img src="images/woman.png" alt="" style="width:150px;height:150px"> </a>
                     <div class="profile_picture_name">
                         <h2>Anne Hathaway</h2>
                         <p><i> <img src="images/femenine.png" alt=""></i> 28</p>
@@ -127,7 +168,23 @@
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
                         <input type="number" name="user_age" placeholder="Age">
-                        </span> </form>
+                        </span> <span style="color:#fff;text-align: left;padding:10px;">
+                                <i style="margin:0 5px;"><img src="images/gender.png" alt=""></i>
+                                <table style="width:70%;display:unset;">
+                            <tr>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" name="gender" value="male" checked> Male<i style="margin:0 5px;"><img src="images/masculine.png" alt=""></i></label>
+                                </td>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" name="gender" value="female"> Female<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
+                                </td>
+                            </tr>
+                        </table>
+                                
+                                
+                            </span></form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
                         <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
@@ -143,8 +200,9 @@
             <div class="column_right_grid sign-in" style="margin-top:0">
                 <div class="sign_in">
                     <h3>Update Image</h3>
-                    <div class="profile_picture"><a><img src="images/profile_img150x150.jpg" alt=""></a></div>
-                    
+                    <div class="profile_picture">
+                        <a><img src="images/woman.png" alt="" style="width:150px;height:150px"></a>
+                    </div>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
                         <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
@@ -279,7 +337,7 @@
                 <div class="sign_in">
                     <h3>Add medicine note</h3>
                     <form> <span>
-                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
+                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter medicine name';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
                         <input type="number" name="medicine_time" placeholder="Time">
@@ -300,7 +358,7 @@
                 <div class="sign_in">
                     <h3>Edit medicine note</h3>
                     <form> <span>
-                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
+                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter medicine name';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
                         <input type="number" name="medicine_time" placeholder="Time">
@@ -322,8 +380,8 @@
                     <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Sunnah Diet</h3>
                     <div class="tweets_list">
                         <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore <a href="#">@Neque</a> <span>10 minutes ago</span></li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore eiusmod <a href="#">#Creative Cloud</a> <span>2 hours ago</span></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore <a href="#">@From</a> <span>Info 1</span></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore eiusmod <a href="#">#From</a> <span>Info 2</span></li>
                         </ul>
                     </div>
                 </div>
@@ -385,13 +443,26 @@
             <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Diagnose Me</h3>
-                    <div class="today_temp"> <img src="images/profile_img150x150.jpg" width="30%" height="100%"> </div>
+                    <div class="today_temp" style="color: #fff">
+                        <table style="width:70%;margin:auto">
+                            <tr>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" id="me" name="diagnose-subject" value="me" checked> For Me</label>
+                                </td>
+                                <td style="width:50%">
+                                    <label>
+                                        <input type="radio" id="other" name="diagnose-subject" value="other"> For Other</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="temp_list">
                         <ul>
-                            <li><a href="#"><span class="day_name">Ruqyah 1</span>&nbsp; 2:35 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
-                            <li><a href="#"><span class="day_name">Ruqyah 2</span>&nbsp; 3:45 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li>
+                                <a href="#"><span class="day_name">Diagnose 1</span>
+                                <label class="digits"></label><div class="clear"></div></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -404,7 +475,6 @@
             var player = document.getElementById('player');
             return !player.paused && !player.ended && 0 < player.currentTime;
         }
-        
         if (isPlaying() == true) {
             $('.player-status').html("Playing...");
         }
