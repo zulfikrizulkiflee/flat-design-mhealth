@@ -424,7 +424,8 @@
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/necklace-white.png" alt="" width="24" height="24"/> </i> Zikr Reminder</h3>
                     <div class="column_right_grid date_events" style="margin-top: 0;">
-                        <h3 style="border-radius: 0;font-size: 2em;padding: 15px 20px;"><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a>  الله أكبر <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
+                        <h3 style="border-radius: 0;font-size: 2em;padding: 15px 20px;"><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a><zikr id="zikr-kalimah"></zikr>
+                             <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
                         <ul id="slide" class="event_dates" style="width: 95vw">
                             
                         </ul>
@@ -481,6 +482,17 @@
         }
         
         $(function() {
+            var zikrKalimah = ['الله أكبر', 'سبحان الله'];
+            $('zikr').html(zikrKalimah[0]);
+            
+            $('#slide_next').on('click', function(){
+                $('zikr').html(zikrKalimah[1]);
+            });
+            
+            $('#slide_prev').on('click', function(){
+                $('zikr').html(zikrKalimah[0]);
+            });
+            
             $('#slide').html("");
             for(i=1;i<=33;i++){
                 $('#slide').append('<li><a href="#" class="slide_next" style="color:#fff">'+i+'</a></li>');
