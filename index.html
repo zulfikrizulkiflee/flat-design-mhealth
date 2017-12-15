@@ -15,7 +15,7 @@
     <script type="text/javascript" src="js/Chart.js"></script>
     <script type="text/javascript" src="js/jquery.easing.js"></script>
     <script type="text/javascript" src="js/jquery.ulslide.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<!--    <script type="text/javascript" src="js/jquery-ui.min.js"></script>-->
     <!----Calender -------->
     <link rel="stylesheet" href="css/clndr.css" type="text/css" />
     <script src="js/underscore-min.js"></script>
@@ -423,14 +423,12 @@
             <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/necklace-white.png" alt="" width="24" height="24"/> </i> Zikr Reminder</h3>
-                    <div class="today_temp"> <img src="images/profile_img150x150.jpg" width="30%" height="100%"> </div>
-                    <div class="temp_list">
-                        <ul>
-                            <li><a href="#"><span class="day_name">Ruqyah 1</span>&nbsp; 2:35 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
-                            <li><a href="#"><span class="day_name">Ruqyah 2</span>&nbsp; 3:45 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                    <div class="column_right_grid date_events" style="margin-top: 0;">
+                        <h3 style="border-radius: 0;font-size: 2em;padding: 15px 20px;"><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a>  الله أكبر <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
+                        <ul id="slide" class="event_dates" style="width: 95vw">
+                            
                         </ul>
+                        <div class="button" id="total-counter"><a href="#">1</a></div>
                     </div>
                 </div>
             </div>
@@ -481,6 +479,29 @@
         else {
             $('.player-status').html("Paused...");
         }
+        
+        $(function() {
+            $('#slide').html("");
+            for(i=1;i<=33;i++){
+                $('#slide').append('<li><a href="#" class="slide_next" style="color:#fff">'+i+'</a></li>');
+            }
+            var current = -1;
+            $('#slide').ulslide({
+                effect: {
+                    type: 'carousel', // slide or fade
+                    axis: 'x',        // x, y
+                    showCount:1
+                },
+                prevButton: '.slide_next',
+                duration: 50,
+                easing: 'easeOutBounce',
+                onAnimateStart: function(){
+                    current++;
+                    $('#total-counter a').text(current);
+                }
+            });
+            
+        });
     </script>
 </body>
 
