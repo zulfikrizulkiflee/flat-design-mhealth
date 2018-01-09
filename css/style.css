@@ -1047,7 +1047,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         color: #FFF;
         font-size: 1em;
         line-height: 1.6em;
-        padding: 2em 2em 1em 2em;
+        padding: 1em 2em;
         border-bottom: 1px solid #1F253D;
     }
     
@@ -1060,7 +1060,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     }
     
     .tweets_list li span {
-        display: block;
+/*        display: block;*/
         color: #9099B7;
         padding: 10px 0;
     }
@@ -1586,4 +1586,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             .chart h4 {
                 right: 4.4em;
             }
+        }
+        
+/*        read more*/
+        .moreellipses{
+            color:#fff !important;
+        }
+        .morecontent span {
+            display: none;
+            color: #fff !important;
+        }
+        .morelink {
+            display: block;
         }
