@@ -57,7 +57,7 @@
                             </span> </form>
                     <div class="signin_facebook">
                         <p>
-                            <a href="#landing2"> <i> <img src="images/arrow-right.png" alt=""></i>Seterusnya</a>
+                            <a href="#" class="next1"> <i> <img src="images/arrow-right.png" alt=""></i>Seterusnya</a>
                         </p>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                         </span> </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#landing1"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#profile">Daftar <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="next2">Daftar <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -137,19 +137,19 @@
                 <div class="profile_picture">
                     <a href="#update-image"><img src="images/woman.png" alt="" style="width:150px;height:150px"> </a>
                     <div class="profile_picture_name">
-                        <h2>Anne Hathaway</h2>
-                        <p><i> <img src="images/femenine.png" alt=""></i> 28</p>
+                        <h2>User Name</h2>
+                        <p class="profile_user_age"><i> <img src="images/masculine.png" alt=""></i> <age>0</age></p>
                     </div> <span><a href="#edit-profile"> <img src="images/edit.png" alt=""> </a></span> </div>
                 <div class="articles_list">
                     <ul>
                         <li>
-                            <a href="#edit-weight" class="red"> <i style="color: #9099B7">kg</i> 68</a>
+                            <a href="#edit-weight" class="red"> <i style="color: #9099B7">kg</i> <span class="profile_user_weight">0</span></a>
                         </li>
                         <li>
-                            <a href="#edit-height" class="purple"> <i style="color: #9099B7">cm</i> 173</a>
+                            <a href="#edit-height" class="purple"> <i style="color: #9099B7">cm</i> <span class="profile_user_height">0</span></a>
                         </li>
                         <li>
-                            <a href="#bmi" class="yellow"> <i style="color: #9099B7">bmi</i> under</a>
+                            <a href="#bmi" class="yellow"> <i style="color: #9099B7">bmi</i> <span class="profile_user_bmi">-</span></a>
                         </li>
                         <div class="clear"></div>
                     </ul>
@@ -218,24 +218,21 @@
         <div class="wrap">
             <div class="column_right_grid sign-in" style="margin-top: 0;">
                 <div class="sign_in">
-                    <h3>Update your weight</h3>
+                    <h3>Kemaskini Berat Anda</h3>
                     <form> <span>
-                        <i style="color: #9099B7">kg</i><input type="number" name="user_weight" placeholder="Weight">
+                        <i style="color: #9099B7">kg</i><input type="number" name="update_user_weight" placeholder="Berat">
                         </span> </form>
                     <div class="signin_facebook">
-                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="update-weight">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
             <div class="column_middle">
                 <div class="weather">
                     <div class="temp_list">
-                        <ul>
-                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
-                                <label class="digits"><i> <img src="images/drop.png" alt="" width="16" height="16"></i> 68 <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>
-                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
-                                <label class="digits"><i> <img src="images/increase.png" alt="" width="16" height="16"></i> 67 <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>
+                        <ul class="weight-list">
+                            
                         </ul>
                     </div>
                 </div>
@@ -248,24 +245,21 @@
         <div class="wrap">
             <div class="column_right_grid sign-in" style="margin-top: 0;">
                 <div class="sign_in">
-                    <h3>Update your height</h3>
+                    <h3>Kemaskini ketinggian anda</h3>
                     <form> <span>
-                        <i style="color: #9099B7">kg</i><input type="number" name="user_height" placeholder="Height">
+                        <i style="color: #9099B7">cm</i><input type="number" name="update_user_height" placeholder="Tinggi">
                         </span> </form>
                     <div class="signin_facebook">
-                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Back</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="update-height">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
             <div class="column_middle">
                 <div class="weather">
                     <div class="temp_list">
-                        <ul>
-                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
-                                <label class="digits">173 <i style="color: #9099B7">cm</i></label><div class="clear"></div></a></li>
-                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
-                                <label class="digits">174 <i style="color: #9099B7">cm</i></label><div class="clear"></div></a></li>
+                        <ul class="height-list">
+                            
                         </ul>
                     </div>
                 </div>
@@ -280,15 +274,26 @@
                 <div class="graph">
                     <canvas id="line-chart" width="auto" style="width: 100%;margin: auto"> </canvas>
                     <script>
+                        var bmiJSON = JSON.parse(localStorage.getItem('MH_user_bmi'));
+                        var label = [""];
+                        var data = [0];
+                        $.each(bmiJSON, function(i,v){
+                            var date = v.date;
+                            date = date.split(" ");
+                            
+                            label.push(date[1]+" "+date[2]);
+                            data.push(v.bmi);
+                        });
+                        
                         var lineChartData = {
-                            labels: ["Apr", "May", "Jun"]
+                            labels: label
                             , datasets: [
                                 {
                                     fillColor: "rgba(255, 255, 255, 0)"
                                     , strokeColor: "#FFF"
                                     , pointColor: "#11a8ab"
                                     , pointStrokeColor: "#FFF"
-                                    , data: [21, 30, 35]
+                                    , data: data
                                 }
                             ]
                         }
@@ -297,11 +302,8 @@
                 </div>
                 <div class="weather">
                     <div class="temp_list">
-                        <ul>
-                            <li><a href="#"><span class="day_name">Sat</span>&nbsp; 29/06 
-                                <label class="digits">healthy <i style="color: #9099B7">19</i> <i> <img src="images/unchanged.png" alt="" width="16" height="16"></i></label><div class="clear"></div></a></li>
-                            <li><a href="#"><span class="day_name">Sun</span>&nbsp; 30/06 
-                                <label class="digits">under <i style="color: #9099B7">16</i> <i> <img src="images/drop.png" alt="" width="16" height="16"></i></label><div class="clear"></div></a></li>
+                        <ul class="bmi-list">
+                            
                         </ul>
                     </div>
                 </div>
@@ -313,17 +315,17 @@
     <div data-role="page" class="main" id="medicine" style="padding-top:3%;">
         <div class="wrap">
             <div class="column_middle" style="margin-top: 0">
-                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 15px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/pills-white.png" alt="" /> </i> Antibiotics</h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 15px;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/pills-white.png" alt="" /> </i> <span style="width: 6em; overflow: hidden;text-overflow: ellipsis;">Antibiotics</span></h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
                     <div class="today_temp" style="position: relative;"> <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
                         <div class="temp">
-                            <figure>Fri 29/06<span>12:30<em>PM</em></span></figure>
+                            <figure>Jumaat 29/06<span>12:30<em>PM</em></span></figure>
                         </div>
                     </div>
                     <div class="temp_list">
                         <ul>
-                            <li><a href="#edit-medicine"><span class="day_name">Sat</span>&nbsp; 29/06 
-                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;"> ANTIBIOTICS </label> <div class="clear"></div></a> </li>
+                            <li><a href="#edit-medicine"><span class="day_name">Sabtu</span>&nbsp; 29/06 
+                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;width: 6em; overflow: hidden;text-overflow: ellipsis;"> ANTIBIOTICS </label> <div class="clear"></div></a> </li>
                         </ul>
                     </div>
                 </div>
@@ -336,16 +338,16 @@
         <div class="wrap">
             <div class="column_right_grid sign-in" style="margin-top: 0">
                 <div class="sign_in">
-                    <h3>Add medicine note</h3>
+                    <h3>Tambah Nota Ubat</h3>
                     <form> <span>
-                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter medicine name';}">
+                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Nama ubat" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nama ubat';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="medicine_time" placeholder="Time">
+                        <input type="number" name="medicine_time" placeholder="Masa">
                         </span> </form>
                     <div class="signin_facebook">
-                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#medicine">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -357,7 +359,7 @@
         <div class="wrap">
             <div class="column_right_grid sign-in" style="margin-top: 0">
                 <div class="sign_in">
-                    <h3>Edit medicine note</h3>
+                    <h3>Ubah Nota Ubat</h3>
                     <form> <span>
                         <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter medicine name';}">
                         </span> <span>
@@ -365,8 +367,8 @@
                         <input type="number" name="medicine_time" placeholder="Time">
                         </span> </form>
                     <div class="signin_facebook">
-                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#medicine">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -378,7 +380,7 @@
         <div class="wrap">
             <div class="column_middle" style="margin-top:0;">
                 <div class="tweets" style="margin-top:0;"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Sunnah Diet</h3>
+                    <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Pemakanan Mengikut <br/>Sunnah</h3>
                     <div class="tweets_list">
                         <ul>
                             <li class="more">Rasulullah tidak minum susu sewaktu baginda menjamah ikan.</li>
@@ -436,21 +438,53 @@
             <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/arabic-art-white.png" alt="" width="24" height="24"/> </i> Ruqyah</h3>
-                    <div class="today_temp">
+                    <div class="today_temp" style="display:none">
                         <div style="color: #fff;width:90%;margin:auto;"><span class="player-status" style="float:left;">Playing...</span><span style="float:right">Ruqyah 1</span></div>
-                        <audio id="player" controls style="width:90%;margin: auto">
-                            <source src="audio/Alex%20Sparrow%20-%20SHE'S%20CRAZY%20BUT%20SHE'S%20MINE%20(OFFICIAL%20VIDEO)%20-%20PRANKSTERS%20COUPLE.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
-                        <div style="width: 90%;margin:auto">
-                            <p style="width:80%;margin:auto;"> <span style="margin-right: 30px"><a onclick="document.getElementById('player').next()" ><img src="images/stop.png" alt="24" height="24" width=""></a><a onclick="document.getElementById('player').next()" ><img src="images/prev.png" alt="24" height="24" width=""></a>
-                                <a onclick="document.getElementById('player').prev()"><img src="images/next.png" alt="" height="24" width="24"></a> </span> <span><a onclick="document.getElementById('player').volume += 0.1"><img src="images/up-volume.png" alt="" height="" width=""></a> <a onclick="document.getElementById('player').volume -= 0.1"><img src="images/low-volume.png" alt="" height="" width=""></a><a onclick="document.getElementById('player').volume -= 1"><img src="images/mute-volume.png" alt="" height="" width=""></a></span> </p>
-                        </div>
+                        <audio class="all-player" id="fatihah" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-fatihah.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="ikhlas" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-ikhlas.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="falaq" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-falaq.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="naas" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/an-naas.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="baqarah1-5" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-baqarah1-5.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="baqarah255-257" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-baqarah255-257.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
                     </div>
                     <div class="temp_list">
                         <ul>
                             <li><a href="#"><span class="day_name">Al-Fatihah</span>&nbsp; 2:35 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                                <label class="digits"> <i onclick="playFunc('fatihah')"><img class="surah-player fatihah" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Ikhlas</span>&nbsp; 2:35 
+                                <label class="digits"> <i onclick="playFunc('ikhlas')"><img class="surah-player ikhlas" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">Al-Falaq</span>&nbsp; 3:45 
-                                <label class="digits"> <i><img src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                                <label class="digits"> <i onclick="playFunc('falaq')"><img class="surah-player falaq" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">An-Naas</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('naas')"><img class="surah-player naas" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Baqarah 1-5</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('baqarah1-5')"><img class="surah-player baqarah1-5" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Baqarah 255-257</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('baqarah255-257')"><img class="surah-player baqarah255-257" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Baqarah 284-286</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('baqarah284-286')"><img class="surah-player baqarah284-286" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">At-Taubah 14</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('taubah14')"><img class="surah-player taubah14" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Yunus 57</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('yunus57')"><img class="surah-player yunus57" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">As-Syuaara’ 80</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('syuaara80')"><img class="surah-player syuaara80" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">An-Nahlu 69</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('nahlu69')"><img class="surah-player nahlu69" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Israa' 82</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('israa82')"><img class="surah-player israa82" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Fussilat 44</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('fussilat44')"><img class="surah-player fussilat44" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Mukminuun 115-118</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('mukminuun115-118')"><img class="surah-player mukminuun115-118" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                            <li><a href="#"><span class="day_name">Al-Hasyr 21-24</span>&nbsp; 3:45 
+                                <label class="digits"> <i onclick="playFunc('hasyr21-24')"><img class="surah-player hasyr21-24" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                         </ul>
                     </div>
                 </div>
@@ -463,12 +497,14 @@
         <div class="wrap">
             <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/necklace-white.png" alt="" width="24" height="24"/> </i> Zikr Reminder</h3>
-                    <div class="column_right_grid date_events" style="margin-top: 0;">
+                    <h3><i><img src="images/necklace-white.png" alt="" width="24" height="24"/> </i> Zikir Harian</h3>
+                    <div class="column_right_grid date_events" style="margin-top: 0;    margin-bottom: 0;height:calc(100% - 116px);">
                         <h3 style="border-radius: 0;font-size: 2em;padding: 15px 20px;"><a href="#" id="slide_prev"><img src="images/arrow-left.png" alt="" /></a><zikr id="zikr-kalimah"></zikr>
                              <a href="#" id="slide_next"><img src="images/arrow-right.png" alt="" /></a></h3>
-                        <ul id="slide" class="event_dates" style="width: 95vw"> </ul>
-                        <div class="button" id="total-counter"><a href="#">1</a></div>
+                        <div style="color: #fff; padding: 60px 0 20px; font-size: 135px;"><em class="exact-amount">0</em><sup class="max-amount" style="font-size: 20px">/33</sup></div>
+                        <div class="zikr-amount" style="color: #fff; padding: 20px; font-size: 30px;">0</div>
+                        <div class="zikr-reset" style="position: absolute;left: 30px;bottom:50px; background:#777;border-radius: 50%;height: 60px; width: 60px; margin: auto; border: 3px solid #fff;color:#FFF;line-height: 60px;">Semula</div>
+                        <div class="zikr-controller" style="background:#777;border-radius: 50%;height: 100px; width: 100px; margin: auto; border: 3px solid #fff;"></div>
                     </div>
                 </div>
             </div>
@@ -507,29 +543,56 @@
     </div>
     <!-- /page -->
     <script>
-        function isPlaying() {
-            var player = document.getElementById('player');
-            return !player.paused && !player.ended && 0 < player.currentTime;
-        }
-        if (isPlaying() == true) {
-            $('.player-status').html("Playing...");
-        }
-        else {
-            $('.player-status').html("Paused...");
-        }
+//        function isPlaying() {
+//            var player = document.getElementById('player');
+//            return !player.paused && !player.ended && 0 < player.currentTime;
+//        }
+//        if (isPlaying() == true) {
+//            $('.player-status').html("Playing...");
+//        }
+//        else {
+//            $('.player-status').html("Paused...");
+//        }
         $(function () {
-            var zikrKalimah = ['الله أكبر', 'سبحان الله'];
+            var zikrKalimah = ['لا إله إلا الله','الحَمْد لله','الله أكبر', 'سبحان الله'];
+            var count = 0;
             $('zikr').html(zikrKalimah[0]);
             $('#slide_next').on('click', function () {
-                $('zikr').html(zikrKalimah[1]);
+                if (count < 5){
+                    count=count+1;
+                    $('zikr').html(zikrKalimah[count]);
+                }
             });
             $('#slide_prev').on('click', function () {
-                $('zikr').html(zikrKalimah[0]);
+                if (count > 0){
+                    count=count-1;
+                    $('zikr').html(zikrKalimah[count]);
+                }
             });
             $('#slide').html("");
-            for (i = 1; i <= 33; i++) {
-                $('#slide').append('<li><a href="#" class="slide_next" style="color:#fff">' + i + '</a></li>');
-            }
+            var counter = 0;
+            var counter2 = 0;
+            $('.zikr-controller').on('click', function () {
+                if (counter < 33) {
+                    counter = counter + 1;
+                    $('.exact-amount').html(counter);
+                }
+                else {
+                    counter = 1;
+                    $('.exact-amount').html(counter);
+                }
+                counter2 = counter2 + 1;
+                $('.zikr-amount').html(counter2);
+            });
+            $('.zikr-reset').on('click', function () {
+                counter = 0;
+                counter2 = 0;
+                $('.exact-amount').html(counter);
+                $('.zikr-amount').html(counter2);
+            });
+            //            for (i = 1; i <= 33; i++) {
+            //                $('#slide').append('<li><a href="#" class="slide_next" style="color:#fff">' + i + '</a></li>');
+            //            }
             var current = -1;
             $('#slide').ulslide({
                 effect: {
@@ -546,6 +609,67 @@
                 }
             });
         });
+        
+//        var element = $('audio');
+        
+//        $('audio').currentTime = 29; // jumps to 29th secs
+        
+
+        //first make sure the audio player is playing
+//        element.play(); 
+
+        //second seek to the specific time you're looking for
+//        element.currentTime = 226;
+        
+        document.addEventListener('play', function(e){
+            var audios = document.getElementsByTagName('audio');
+            for(var i = 0, len = audios.length; i < len;i++){
+                if(audios[i] != e.target){
+                    audios[i].pause();
+                    audios[i].currentTime = 0;
+                }
+            }
+        }, true);
+        
+
+        function playFunc(surah){
+            document.getElementById(surah).play();
+            if (surah == 'fatihah' && $('.fatihah').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.fatihah').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'ikhlas' && $('.ikhlas').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.ikhlas').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'falaq' && $('.falaq').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.falaq').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'naas' && $('.naas').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.naas').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'baqarah1-5' && $('.baqarah1-5').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.baqarah1-5').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'baqarah255-257' && $('.baqarah255-257').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.baqarah255-257').attr('src','images/pause-button.png');
+                
+            }else {
+                $('.surah-player').attr('src','images/play-button.png');
+                document.getElementById(surah).pause();
+            }
+        }
+        
+        function checkPlay(currentTime,duration){
+            if (currentTime == duration){
+                $('.surah-player').attr('src','images/play-button.png');
+            }
+        }
+    
     </script>
 </body>
 
