@@ -48,7 +48,7 @@
                                 </td>
                                 <td>
                                     <label>
-                                        <input type="radio" name="gender" value="female"> Perempuan<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
+                                        <input type="radio" name="gender" value="female"> Wanita<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
                                 </td>
                             </tr>
                         </table>
@@ -75,7 +75,9 @@
                         <i style="color: #9099B7">kg</i><input type="number" name="user_weight" placeholder="Berat">
                         </span> <span>
                         <i style="color: #9099B7">cm</i><input type="number" name="user_height" placeholder="Tinggi">
-                        </span> <span class="known-cond" style="padding: 15px;color: #fff">
+                        </span> 
+<!--
+                           <span class="known-cond" style="padding: 15px;color: #fff">
                             <p style="text-align: left;">Masalah Kesihatan Lain</p>
                             <p style="margin-top: 10px;">
                                 <table style="text-align: left;width: 100%">
@@ -97,7 +99,9 @@
                                     </tr>
                                 </table>
                             </p>
-                        </span> </form>
+                        </span> 
+-->
+                        </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#landing1"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
                         <p style="width: 50%:float: right;"> <a href="#" class="next2">Daftar <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
@@ -115,7 +119,10 @@
                     <div class="menu">
                         <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
                         <ul class="nav" style="z-index: 9999;">
-                            <li><a href="#medicine"><i><img src="images/pills.png" alt="" /></i>Nota Pengambilan Ubat Peribadi <span class="messages">5</span></a></li>
+                            <li><a href="#medicine"><i><img src="images/pills.png" alt="" /></i>Nota Pengambilan Ubat Peribadi 
+<!--                            <span class="messages">5</span>-->
+                            </a>
+                            </li>
                             <li><a href="#diet"><i><img src="images/cutlery.png" alt="" /></i>Pemakanan Mengikut Sunnah</a></li>
                             <li><a href="#ruqyah"><i><img src="images/arabic-art.png" alt="" /></i>Ayat Ruqyah</a></li>
                             <li><a href="#zikr"><i><img src="images/necklace.png" alt="" /></i>Zikir Harian</a></li>
@@ -163,23 +170,23 @@
         <div class="wrap">
             <div class="column_right_grid sign-in">
                 <div class="sign_in">
-                    <h3>Edit your profile</h3>
+                    <h3>Kemaskini Profil Anda</h3>
                     <form> <span>
-                        <i><img src="images/user.png" alt=""></i><input type="text" name="user_name" value="Enter your name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your name';}">
+                        <i><img src="images/user.png" alt=""></i><input type="text" name="update_user_name" value="Nama" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nama';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="user_age" placeholder="Age">
+                        <input type="number" name="update_user_age" placeholder="Umur">
                         </span> <span style="color:#fff;text-align: left;padding:10px;">
                                 <i style="margin:0 5px;"><img src="images/gender.png" alt=""></i>
                                 <table style="width:70%;display:unset;">
                             <tr>
                                 <td style="width:50%">
                                     <label>
-                                        <input type="radio" name="gender" value="male" checked> Male<i style="margin:0 5px;"><img src="images/masculine.png" alt=""></i></label>
+                                        <input type="radio" name="gender" value="male" checked> Lelaki<i style="margin:0 5px;"><img src="images/masculine.png" alt=""></i></label>
                                 </td>
                                 <td style="width:50%">
                                     <label>
-                                        <input type="radio" name="gender" value="female"> Female<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
+                                        <input type="radio" name="gender" value="female"> Perempuan<i style="margin:0 5px;"><img src="images/femenine.png" alt=""></i></label>
                                 </td>
                             </tr>
                         </table>
@@ -187,8 +194,8 @@
                                 
                             </span></form>
                     <div class="signin_facebook">
-                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Cancel</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#profile">Save <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#profile"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="update-profile">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -316,16 +323,18 @@
         <div class="wrap">
             <div class="column_middle" style="margin-top: 0">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 15px;"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/pills-white.png" alt="" /> </i> <span style="width: 6em; overflow: hidden;text-overflow: ellipsis;">Antibiotics</span></h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
-                    <div class="today_temp" style="position: relative;"> <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
+                    <h3><i><img src="images/pills-white.png" alt="" /> </i> <span class="latest-medicine-name" style="">Nota Pengambilan<br/> Ubat Peribadi</span></h3> <span style="position: absolute; margin: 15px; right: 0; top:0;"><a href="#add-medicine"> <img src="images/plus.png" alt=""> </a></span>
+<!--
+                    <div class="today_temp" style="position: relative;"> 
+                       <span style="position: absolute; margin: 15px; bottom: 0;right: 0;"><a href="#"> <img src="images/turn-notifications-off-button.png" alt=""> </a></span>
                         <div class="temp">
-                            <figure>Jumaat 29/06<span>12:30<em>PM</em></span></figure>
+                            <figure><span class="latest-medicine-time">--:--<em>--</em></span></figure>
                         </div>
                     </div>
+-->
                     <div class="temp_list">
-                        <ul>
-                            <li><a href="#edit-medicine"><span class="day_name">Sabtu</span>&nbsp; 29/06 
-                                <label class="digits">12:30<em>PM</em></label> <label style="color: #fff;margin: 0 15px;width: 6em; overflow: hidden;text-overflow: ellipsis;"> ANTIBIOTICS </label> <div class="clear"></div></a> </li>
+                        <ul class="medicine-list">
+                            
                         </ul>
                     </div>
                 </div>
@@ -343,11 +352,22 @@
                         <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Nama ubat" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nama ubat';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="medicine_time" placeholder="Masa">
-                        </span> </form>
+                        <input type="number" name="medicine_hour" placeholder="Jam (24 jam)" min="0" max="23">
+                        </span><span>
+                        <i><img src="images/events.png" alt=""></i>
+                        <input type="number" name="medicine_minute" placeholder="Minit" min="0" max="59">
+                        </span>
+<!--
+                        <span style="color:#FFF;padding: 10px 0;">
+                        <label style="display: inline-block;margin:0;"><input type="checkbox" name="medicine_notify" value="true" checked> Notifikasi&nbsp;&nbsp;&nbsp;</label>
+                        <label style="display: inline-block;margin:0;"><input type="checkbox" name="medicine_repeat" value="true" checked> Ulang Notifikasi</label>
+                        
+                        </span>
+-->
+                    </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="save-medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -452,6 +472,24 @@
                             <source src="audio/al-baqarah1-5.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
                         <audio class="all-player" id="baqarah255-257" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
                             <source src="audio/al-baqarah255-257.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="baqarah284-286" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-baqarah284-286.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="taubah14" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/at-taubah14.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="yunus57" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/yunus57.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="syuaraa80" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/as-syuaraa.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="nahlu69" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/an-nahlu69.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="israa82" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/israa82.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="fussilat44" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/fussilat44.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="mukminun115-118" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-mukminun115-118.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
+                        <audio class="all-player" id="hasyr21-24" controls style="width:90%;margin: auto;" ontimeupdate="checkPlay(this.currentTime,this.duration)">
+                            <source src="audio/al-hasyr21-24.mp3" type="audio/mpeg"> Your browser does not support the audio element. </audio>
                     </div>
                     <div class="temp_list">
                         <ul>
@@ -474,7 +512,7 @@
                             <li><a href="#"><span class="day_name">Yunus 57</span>&nbsp; 3:45 
                                 <label class="digits"> <i onclick="playFunc('yunus57')"><img class="surah-player yunus57" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">As-Syuaara’ 80</span>&nbsp; 3:45 
-                                <label class="digits"> <i onclick="playFunc('syuaara80')"><img class="surah-player syuaara80" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                                <label class="digits"> <i onclick="playFunc('syuaraa80')"><img class="surah-player syuaraa80" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">An-Nahlu 69</span>&nbsp; 3:45 
                                 <label class="digits"> <i onclick="playFunc('nahlu69')"><img class="surah-player nahlu69" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">Al-Israa' 82</span>&nbsp; 3:45 
@@ -482,7 +520,7 @@
                             <li><a href="#"><span class="day_name">Fussilat 44</span>&nbsp; 3:45 
                                 <label class="digits"> <i onclick="playFunc('fussilat44')"><img class="surah-player fussilat44" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">Al-Mukminuun 115-118</span>&nbsp; 3:45 
-                                <label class="digits"> <i onclick="playFunc('mukminuun115-118')"><img class="surah-player mukminuun115-118" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
+                                <label class="digits"> <i onclick="playFunc('mukminun115-118')"><img class="surah-player mukminun115-118" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                             <li><a href="#"><span class="day_name">Al-Hasyr 21-24</span>&nbsp; 3:45 
                                 <label class="digits"> <i onclick="playFunc('hasyr21-24')"><img class="surah-player hasyr21-24" src="images/play-button.png" alt="" /></i></label><div class="clear"></div></a></li>
                         </ul>
@@ -657,6 +695,42 @@
             }else if (surah == 'baqarah255-257' && $('.baqarah255-257').attr('src') == 'images/play-button.png'){
                 $('.surah-player').attr('src','images/play-button.png');
                 $('.baqarah255-257').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'baqarah284-286' && $('.baqarah284-286').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.baqarah284-286').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'taubah14' && $('.taubah14').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.taubah14').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'yunus57' && $('.yunus57').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.yunus57').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'syuaraa80' && $('.syuaraa80').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.syuaraa80').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'nahlu69' && $('.nahlu69').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.nahlu69').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'israa82' && $('.israa82').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.israa82').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'fussilat44' && $('.fussilat44').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.fussilat44').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'mukminun115-118' && $('.mukminun115-118').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.mukminun115-118').attr('src','images/pause-button.png');
+                
+            }else if (surah == 'hasyr21-24' && $('.hasyr21-24').attr('src') == 'images/play-button.png'){
+                $('.surah-player').attr('src','images/play-button.png');
+                $('.hasyr21-24').attr('src','images/pause-button.png');
                 
             }else {
                 $('.surah-player').attr('src','images/play-button.png');

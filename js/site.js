@@ -9,7 +9,8 @@ $(document).ready(function () {
         if ($('input[name=user_name]').val() != "" && $('input[name=user_age]').val() != "") {
             localStorage.setItem('MH_user_name', $('input[name=user_name]').val());
             localStorage.setItem('MH_user_age', $('input[name=user_age]').val());
-            localStorage.setItem('MH_user_gender', $('input[name=gender]').val());
+            $('input[name=gender][value='+$('input[name=gender]:checked').attr('value')+']').attr('checked', true);
+            localStorage.setItem('MH_user_gender', $('input[name=gender]:checked').attr('value'));
             if (localStorage.getItem('MH_user_name') != null && localStorage.getItem('MH_user_name') != "" && localStorage.getItem('MH_user_age') != '' && localStorage.getItem('MH_user_age') != null) {
                 $.mobile.navigate('#landing2');
                 $('.profile_picture_name h2').html(localStorage.getItem('MH_user_name'));
@@ -52,6 +53,9 @@ $(document).ready(function () {
         }
     });
     $('.profile_picture_name h2').html(localStorage.getItem('MH_user_name'));
+    $('input[name=update_user_name]').val(localStorage.getItem('MH_user_name'));
+    $('input[name=update_user_age]').val(localStorage.getItem('MH_user_age'));
+    $('input[name=update_gender]').val(localStorage.getItem('MH_user_gender'));
     if (localStorage.getItem('MH_user_gender') == 'male') {
         $('.profile_user_age img').attr('src', 'images/masculine.png');
     }
@@ -70,6 +74,11 @@ $(document).ready(function () {
 //            bmiJSON.unshift({date : ""+new Date(), bmi : finalBmi.toFixed(2)});
 //            localStorage.setItem('MH_user_bmi', JSON.stringify(bmiJSON));
 //        }
+        
+        if(localStorage.getItem('MH_user_medicine_note') != null){
+            updateMedicineNote();
+        }
+        
         var bmiJSON = JSON.parse(localStorage.getItem('MH_user_bmi'));
         $('.profile_user_weight').html(weightJSON[0].weight);
         $('.profile_user_height').html(heightJSON[0].height);
@@ -178,6 +187,83 @@ $(document).ready(function () {
         }
         location.reload();
     });
+    $('.update-profile').on('click', function () {
+        if (confirm("Kemaskini profile anda?")){
+            localStorage.setItem('MH_user_name',$('input[name=update_user_name]').val());
+            localStorage.setItem('MH_user_age',$('input[name=update_user_age]').val());
+           $('input[name=gender][value='+$('input[name=gender]:checked').attr('value')+']').attr('checked', true);
+            localStorage.setItem('MH_user_gender',$('input[name=gender]:checked').attr('value'));
+            
+            location.reload();
+        }
+    });
+    $('.save-medicine').on('click', function(){
+        if(confirm("Simpan nota ubat?")){
+            var medicineName = $('input[name=medicine_name]').val();
+            var medicineHour = $('input[name=medicine_hour]').val();
+            var medicineMinute = $('input[name=medicine_minute]').val();
+            var medicine24 = "AM";
+            if(medicineHour >= 12){
+                if(medicineHour != 12){
+                    medicineHour = medicineHour - 12;
+                }
+                
+                medicine24 = "PM";
+            }
+            var medicineTime = medicineHour+":"+medicineMinute;
+            if(localStorage.getItem('MH_user_medicine_note') != null){
+                var medicineJSON = JSON.parse(localStorage.getItem('MH_user_medicine_note'));
+                medicineJSON.push({time : ""+medicineTime, meridian: medicine24, medicine_name : medicineName});
+
+                localStorage.setItem("MH_user_medicine_note", JSON.stringify(medicineJSON));
+            }else{
+                var medicineJSON = '[{"time" : "'+medicineTime+'", "meridian": "'+medicine24+'","medicine_name" : "'+medicineName+'"}]';
+                localStorage.setItem("MH_user_medicine_note", medicineJSON);
+            }
+            updateMedicineNote();
+            $.mobile.navigate('#medicine');
+        }
+        
+        
+//        var medicineRepeat = true;
+//        if($('input[name=medicine_repeat]').attr('checked') == false){
+//            medicineRepeat = false;
+//        }
+    });
+    
+    function updateMedicineNote(){
+        if(localStorage.getItem('MH_user_medicine_note') != null){
+            var medicineJSON = JSON.parse(localStorage.getItem('MH_user_medicine_note'));
+            
+            $('.medicine-list').html("");
+            
+            var currentTime = new Date();
+            var newArr = [];
+            
+            $.each(medicineJSON, function(i,v){
+                time = v.time.split(":");
+                
+            });
+            $.each(medicineJSON, function(i,v){
+                time = v.time.split(":");
+                if(time[0].length == 1){
+                    time[0] = "0"+time[0];
+                }
+                if(time[1].length == 1){
+                    time[1] = "0"+time[1];
+                }
+                time = time.join(":");
+                if(i >= 0){
+                    var medicineStr = '<li><a href="#edit-medicine"> <label class="digits">'+time+'<em>'+v.meridian+'</em></label> <label style="color: #fff;margin: 0 15px 0 0;width: 15em; overflow: hidden;text-overflow: ellipsis;">'+v.medicine_name+'</label> <div class="clear"></div></a> </li>';
+                    $('.medicine-list').append(medicineStr);
+                }
+//                }else{
+//                    $('.latest-medicine-name').html(v.medicine_name);
+//                    $('.latest-medicine-time').html(time+"<em>"+v.meridian+"</em>");
+//                }
+            });
+        }
+    }
     // assuming you've got the appropriate language files,
     // clndr will respect whatever moment's language is set to.
     // moment.lang('ru');
