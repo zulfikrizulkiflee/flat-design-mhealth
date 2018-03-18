@@ -21,6 +21,7 @@
     <script src="js/underscore-min.js"></script>
     <script src="js/moment-2.2.1.js"></script>
     <script src="js/clndr.js"></script>
+    <script src="js/audio.js"></script>
     <script src="js/site.js"></script>
     <!----End Calender -------->
     <meta name="viewport" content="width=device-width, initial-scale=1"> </head>
@@ -648,6 +649,10 @@
             });
         });
         
+        audiojs.events.ready(function() {
+            var as = audiojs.createAll();
+        });
+        
 //        var element = $('audio');
         
 //        $('audio').currentTime = 29; // jumps to 29th secs
@@ -671,6 +676,10 @@
         
 
         function playFunc(surah){
+//            src = '#'+surah+' source';
+//            src = $(src).attr('src');
+//            var media = new Media(src, success, errorThrown);
+//            media.play();
             document.getElementById(surah).play();
             if (surah == 'fatihah' && $('.fatihah').attr('src') == 'images/play-button.png'){
                 $('.surah-player').attr('src','images/play-button.png');
