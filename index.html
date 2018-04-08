@@ -143,7 +143,7 @@
             </div>
             <div class="column_middle_grid1">
                 <div class="profile_picture">
-                    <a href="#update-image"><img src="images/woman.png" alt="" style="width:150px;height:150px"> </a>
+                    <a href="#"><img id="bmi_icon" src="images/normal.png" alt="" style="width:150px;height:150px"> </a>
                     <div class="profile_picture_name">
                         <h2>User Name</h2>
                         <p class="profile_user_age"><i> <img src="images/masculine.png" alt=""></i> <age>0</age></p>
@@ -283,14 +283,14 @@
                     <canvas id="line-chart" width="auto" style="width: 100%;margin: auto"> </canvas>
                     <script>
                         var bmiJSON = JSON.parse(localStorage.getItem('MH_user_bmi'));
-                        var label = [""];
-                        var data = [0];
+                        var label = [];
+                        var data = [];
                         $.each(bmiJSON, function(i,v){
                             var date = v.date;
                             date = date.split(" ");
                             
-                            label.push(date[1]+" "+date[2]);
-                            data.push(v.bmi);
+                            label.unshift(date[1]+" "+date[2]);
+                            data.unshift(v.bmi);
                         });
                         
                         var lineChartData = {
@@ -353,10 +353,10 @@
                         <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Nama ubat" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nama ubat';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="medicine_hour" placeholder="Jam (24 jam)" min="0" max="23">
+                        <input type="number" name="medicine_time" placeholder="Kali sehari" min="0">
                         </span><span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="medicine_minute" placeholder="Minit" min="0" max="59">
+                        <input type="text" name="medicine_dos" value="Dos" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Dos';}">
                         </span>
 <!--
                         <span style="color:#FFF;padding: 10px 0;">
@@ -382,14 +382,18 @@
                 <div class="sign_in">
                     <h3>Ubah Nota Ubat</h3>
                     <form> <span>
-                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Enter medicine name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter medicine name';}">
+                       <input type="hidden" name="medicine_id">
+                        <i><img src="images/pills.png" alt=""></i><input type="text" name="medicine_name" value="Nama ubat" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nama ubat';}">
                         </span> <span>
                         <i><img src="images/events.png" alt=""></i>
-                        <input type="number" name="medicine_time" placeholder="Time">
+                        <input type="number" name="medicine_time" placeholder="Kali sehari" min="0">
+                        </span><span>
+                        <i><img src="images/events.png" alt=""></i>
+                        <input type="text" name="medicine_dos" value="Dos" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Dos';}">
                         </span> </form>
                     <div class="signin_facebook">
                         <p style="width: 50%;float: left; border-right: 2px solid #fff;"> <a href="#medicine"><i> <img src="images/arrow-left.png" alt=""></i> Kembali</a> </p>
-                        <p style="width: 50%:float: right;"> <a href="#medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
+                        <p style="width: 50%:float: right;"> <a href="#" class="update-medicine">Simpan <i> <img src="images/arrow-right.png" alt=""></i></a> </p>
                     </div>
                 </div>
             </div>
@@ -400,6 +404,9 @@
     <div data-role="page" class="main" id="diet" style="padding-top:3%;">
         <div class="wrap">
             <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
                 <div class="tweets" style="margin-top:0;"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
                     <h3><i><img src="images/cutlery-white.png" alt="" width="24" height="24"/> </i> Pemakanan Mengikut <br/>Sunnah</h3>
                     <div class="tweets_list">
@@ -555,24 +562,252 @@
         <div class="wrap">
             <div class="column_middle" style="margin-top:0;">
                 <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#profile"> <img src="images/arrow-left.png" alt=""> </a></span>
-                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Diagnose Me</h3>
-                    <div class="today_temp" style="color: #fff">
-                        <table style="width:70%;margin:auto">
-                            <tr>
-                                <td style="width:50%">
-                                    <label>
-                                        <input type="radio" id="me" name="diagnose-subject" value="me" checked> For Me</label>
-                                </td>
-                                <td style="width:50%">
-                                    <label>
-                                        <input type="radio" id="other" name="diagnose-subject" value="other"> For Other</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Penyakit, doa <br/>dan amalan harian</h3>
                     <div class="temp_list">
                         <ul>
-                            <li> <a href="#"><span class="day_name">Diagnose 1</span>
+                            <li> <a href="#hypertension"><span class="day_name">Darah Tinggi (Hypertension)</span>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#diabetes"><span class="day_name">Kencing Manis (Diabetes)</span>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#cholesterol"><span class="day_name">Kolestrol (Cholesterol)</span>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#heart"><span class="day_name">Sakit Jantung (Heart Attack)</span>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#cancer"><span class="day_name">Barah (Cancer)</span>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of diagnose(darah tinggi) page -->
+    <div data-role="page" class="main" id="hypertension" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#diagnose"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Darah Tinggi<br/>(Hypertension)</h3>
+                    <div class="temp_list">
+                        <ul>
+                            <li> <a href="#"><span class="day_name">Surah Al-Fatihah, Ayat 1-7</span><img src="images/01-alfatihah.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[2] Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</p>
+                                   <p>[3] Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[4] Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</p>
+                                   <p>[5] Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</p>
+                                   <p>[6] Tunjukilah kami jalan yang lurus.</p>
+                                   <p>[7] Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Surah Al-Hasyr, Ayat 21-24</span>
+                               <img src="images/al-hasyr.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[21] Sekiranya Kami turunkan Al-Quran ini ke atas sebuah gunung, nescaya engkau melihat gunung itu khusyuk serta pecah belah kerana takut kepada Allah. Dan (ingatlah), misal-misal perbandingan ini Kami kemukakan kepada umat manusia, supaya mereka memikirkannya.</p>
+                                   <p>[22] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Mengetahui perkara yang ghaib dan yang nyata; Dia lah Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[23] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Menguasai (sekalian alam); Yang Maha Suci; Yang Maha Selamat Sejahtera (dari segala kekurangan); Yang Maha Melimpahkan Keamanan; Yang Maha Pengawal serta Pengawas; Yang Maha Kuasa; Yang Maha Kuat (menundukkan segala-galanya); Yang Melengkapi segala KebesaranNya. Maha Suci Allah dari segala yang mereka sekutukan denganNya.</p>
+                                   <p>[24] Dia lah Allah, Yang Menciptakan sekalian makhluk; Yang Mengadakan (dari tiada kepada ada); Yang Membentuk rupa (makhluk-makhlukNya menurut yang dikehendakiNya); bagiNyalah nama-nama yang sebaik-baiknya dan semulia-mulianya; bertasbih kepadaNya segala yang ada di langit dan di bumi; dan Dia lah Yang tiada bandingNya, lagi Maha Bijaksana. </p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa Darah Tinggi</span>
+                               <img src="images/darah-tinggi.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Ya Allah! Kasihanilah kulitnya yang lembut, tulangnya yang halus dan uratnya yang sempit daripada terlalu panas. Wahai Ummi Mildam **, jikalau engkau sesungguhnya beriman dengan Allah yang Maha Agung, maka janganlah kau sakit kepala, janganlah kau pahitkan mulut dan janganlah kau minum darah. Berpindahlah darinya kepada orang yang menyekutukan Allah dengan tuhan yang lain."</p>
+                                   <p>** Ummi Mildam adalah nama asal sakit demam, merupakan makhluk halus yang memasuki badan manusia, e.g virus atau bakteria.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Selawat Syifa’</span>
+                               <img src="images/darah-tinggi.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Ya Allah! Kasihanilah kulitnya yang lembut, tulangnya yang halus dan uratnya yang sempit daripada terlalu panas. Wahai Ummi Mildam **, jikalau engkau sesungguhnya beriman dengan Allah yang Maha Agung, maka janganlah kau sakit kepala, janganlah kau pahitkan mulut dan janganlah kau minum darah. Berpindahlah darinya kepada orang yang menyekutukan Allah dengan tuhan yang lain."</p>
+                                   <p>** Ummi Mildam adalah nama asal sakit demam, merupakan makhluk halus yang memasuki badan manusia, e.g virus atau bakteria.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of kencing manis page -->
+    <div data-role="page" class="main" id="diabetes" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#diagnose"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Kencing Manis<br/>(Diabetes)</h3>
+                    <div class="temp_list">
+                        <ul>
+                            <li> <a href="#"><span class="day_name">Surah Al-Fatihah, Ayat 1-7</span><img src="images/01-alfatihah.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[2] Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</p>
+                                   <p>[3] Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[4] Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</p>
+                                   <p>[5] Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</p>
+                                   <p>[6] Tunjukilah kami jalan yang lurus.</p>
+                                   <p>[7] Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa Kencing Manis</span>
+                               <img src="images/kencing-manis.png" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Ya Allah, Tuhan (yang memelihara) manusia, yang menghilangkan kesusahan, sembuhkanlah. Engkaulah yang menyembuhkan, tidak ada suatu penyembuhan kecuali kesembuhanMu, sembuh yang tidak diiringi sakit juga penderitaan, kecuali kesembuhannya."</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa ‘Ilaj Ilahi</span>
+                               <img src="images/ilaj.png" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Tuhan kami Allah yang berada di langit (hakikatnya Allah tidak bertempat) Maha suci namaMu, urusanMu di langit dan bumi. Sepertimana rahmatMu terdapat di langit, maka anugerahkanlah rahmatMu di bumi, dan ampunilah bagi kami, dosa dan kesalahan kami. Engkau adalah Tuhan orang-orang yang baik. Turunkanlah rahmat dari sisiMu, dan kesembuhan daripada kesembuhanMu terhadap sakit ini - sembuhlah ia dengan izin Allah."</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of koesterol page -->
+    <div data-role="page" class="main" id="cholesterol" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#diagnose"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Kolestrol<br/>(Cholesterol)</h3>
+                    <div class="temp_list">
+                        <ul>
+                            <li> <a href="#"><span class="day_name">Surah Al-Fatihah, Ayat 1-7</span><img src="images/01-alfatihah.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[2] Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</p>
+                                   <p>[3] Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[4] Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</p>
+                                   <p>[5] Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</p>
+                                   <p>[6] Tunjukilah kami jalan yang lurus.</p>
+                                   <p>[7] Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Surah Al-Hasyr, Ayat 21-24</span>
+                               <img src="images/al-hasyr.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[21] Sekiranya Kami turunkan Al-Quran ini ke atas sebuah gunung, nescaya engkau melihat gunung itu khusyuk serta pecah belah kerana takut kepada Allah. Dan (ingatlah), misal-misal perbandingan ini Kami kemukakan kepada umat manusia, supaya mereka memikirkannya.</p>
+                                   <p>[22] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Mengetahui perkara yang ghaib dan yang nyata; Dia lah Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[23] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Menguasai (sekalian alam); Yang Maha Suci; Yang Maha Selamat Sejahtera (dari segala kekurangan); Yang Maha Melimpahkan Keamanan; Yang Maha Pengawal serta Pengawas; Yang Maha Kuasa; Yang Maha Kuat (menundukkan segala-galanya); Yang Melengkapi segala KebesaranNya. Maha Suci Allah dari segala yang mereka sekutukan denganNya.</p>
+                                   <p>[24] Dia lah Allah, Yang Menciptakan sekalian makhluk; Yang Mengadakan (dari tiada kepada ada); Yang Membentuk rupa (makhluk-makhlukNya menurut yang dikehendakiNya); bagiNyalah nama-nama yang sebaik-baiknya dan semulia-mulianya; bertasbih kepadaNya segala yang ada di langit dan di bumi; dan Dia lah Yang tiada bandingNya, lagi Maha Bijaksana. </p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa Kolestrol</span>
+                               <img src="images/kolesterol.png" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Ya Allah! Kasihanilah kulitnya yang lembut, tulangnya yang halus dan uratnya yang sempit daripada terlalu panas. Wahai Ummi Mildam **, jikalau engkau sesungguhnya beriman dengan Allah yang Maha Agung, maka janganlah kau sakit kepala, janganlah kau pahitkan mulut dan janganlah kau minum darah. Berpindahlah darinya kepada orang yang menyekutukan Allah dengan tuhan yang lain."</p>
+                                   <p>** Ummi Mildam adalah nama asal sakit demam, merupakan makhluk halus yang memasuki badan manusia, e.g virus atau bakteria.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of heart page -->
+    <div data-role="page" class="main" id="heart" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#diagnose"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Sakit Jantung<br/>(Heart Attack)</h3>
+                    <div class="temp_list">
+                        <ul>
+                            <li> <a href="#"><span class="day_name">Surah Al-Fatihah, Ayat 1-7</span><img src="images/01-alfatihah.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[2] Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</p>
+                                   <p>[3] Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[4] Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</p>
+                                   <p>[5] Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</p>
+                                   <p>[6] Tunjukilah kami jalan yang lurus.</p>
+                                   <p>[7] Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Surah Al-Hasyr, Ayat 21-24</span>
+                               <img src="images/al-hasyr.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[21] Sekiranya Kami turunkan Al-Quran ini ke atas sebuah gunung, nescaya engkau melihat gunung itu khusyuk serta pecah belah kerana takut kepada Allah. Dan (ingatlah), misal-misal perbandingan ini Kami kemukakan kepada umat manusia, supaya mereka memikirkannya.</p>
+                                   <p>[22] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Mengetahui perkara yang ghaib dan yang nyata; Dia lah Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[23] Dia lah Allah, yang tidak ada Tuhan melainkan Dia; Yang Menguasai (sekalian alam); Yang Maha Suci; Yang Maha Selamat Sejahtera (dari segala kekurangan); Yang Maha Melimpahkan Keamanan; Yang Maha Pengawal serta Pengawas; Yang Maha Kuasa; Yang Maha Kuat (menundukkan segala-galanya); Yang Melengkapi segala KebesaranNya. Maha Suci Allah dari segala yang mereka sekutukan denganNya.</p>
+                                   <p>[24] Dia lah Allah, Yang Menciptakan sekalian makhluk; Yang Mengadakan (dari tiada kepada ada); Yang Membentuk rupa (makhluk-makhlukNya menurut yang dikehendakiNya); bagiNyalah nama-nama yang sebaik-baiknya dan semulia-mulianya; bertasbih kepadaNya segala yang ada di langit dan di bumi; dan Dia lah Yang tiada bandingNya, lagi Maha Bijaksana. </p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Selawat Syifa’</span>
+                               <img src="images/darah-tinggi.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>"Ya Allah! Kasihanilah kulitnya yang lembut, tulangnya yang halus dan uratnya yang sempit daripada terlalu panas. Wahai Ummi Mildam **, jikalau engkau sesungguhnya beriman dengan Allah yang Maha Agung, maka janganlah kau sakit kepala, janganlah kau pahitkan mulut dan janganlah kau minum darah. Berpindahlah darinya kepada orang yang menyekutukan Allah dengan tuhan yang lain."</p>
+                                   <p>** Ummi Mildam adalah nama asal sakit demam, merupakan makhluk halus yang memasuki badan manusia, e.g virus atau bakteria.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of heart page -->
+    <div data-role="page" class="main" id="cancer" style="padding-top:3%;">
+        <div class="wrap">
+            <div class="column_middle" style="margin-top:0;">
+               <div class="slider-container">
+                   Tukar saiz tulisan
+               <input type="range" min="1" max="3" value="1" class="slider" id="myRange"></div>
+                <div class="weather" style="margin-top: 0;position: relative"> <span style="position: absolute; margin: 12px"><a href="#diagnose"> <img src="images/arrow-left.png" alt=""> </a></span>
+                    <h3><i><img src="images/phonendoscope-white.png" alt="" width="24" height="24"/> </i> Barah<br/>(Cancer)</h3>
+                    <div class="temp_list">
+                        <ul>
+                            <li> <a href="#"><span class="day_name">Surah Al-Fatihah, Ayat 1-7</span><img src="images/01-alfatihah.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[2] Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</p>
+                                   <p>[3] Yang Maha Pemurah, lagi Maha Mengasihani.</p>
+                                   <p>[4] Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</p>
+                                   <p>[5] Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</p>
+                                   <p>[6] Tunjukilah kami jalan yang lurus.</p>
+                                   <p>[7] Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Surah Al-Ikhlas, Ayat 1-4</span>
+                               <img src="images/ikhlas.jpg" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Katakanlah (wahai Muhammad): "(Tuhanku) ialah Allah Yang Maha Esa;</p>
+                                   <p>[2] "Allah Yang menjadi tumpuan sekalian makhluk untuk memohon sebarang hajat;</p>
+                                   <p>[3] "Ia tiada beranak, dan Ia pula tidak diperanakkan;</p>
+                                   <p>[4] "Dan tidak ada sesiapapun yang serupa denganNya".</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa Mengecilkan Bengkak</span>
+                               <img src="images/bengkak.png" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>“Wahai Allah yang maha mengecilkan benda yang besar dan maha membesarkan benda yang kecil, kecilkanlah pada dia (sebut nama pesakit dan ibunya). Ya Allah wahai yang paling mengasihani daripada segala yang mengasihani.”</p>
+                               </div>
+                                <label class="digits"></label><div class="clear"></div></a> </li>
+                            <li> <a href="#"><span class="day_name">Doa Barah (Surah al-Qalam – Ayat 1-2)</span>
+                               <img src="images/barah.png" style="width: 100%;height: auto;">
+                               <div class="quran">
+                                   <p>[1] Nuun. Demi Pena dan apa yang mereka tulis, -</p>
+                                   <p>[2] Engkau (wahai Muhammad) - dengan sebab nikmat pemberian Tuhanmu - bukanlah seorang gila (sebagaimana yang dituduh oleh kaum musyrik, bahkan engkau adalah seorang yang bijaksana).</p>
+                               </div>
                                 <label class="digits"></label><div class="clear"></div></a> </li>
                         </ul>
                     </div>

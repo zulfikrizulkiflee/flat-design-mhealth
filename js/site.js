@@ -95,7 +95,7 @@ $(document).ready(function () {
             }else if (v.weight < v.weight){
                 stast = "drop";
             }
-            var weightStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits"><i> <img src="images/'+stats+'.png" alt="" width="16" height="16"></i> '+v.weight+' <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>';
+            var weightStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits"> '+v.weight+' <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>';
             $('ul.weight-list').append(weightStr);
         });
         
@@ -108,20 +108,28 @@ $(document).ready(function () {
             }else if (v.height < v.height){
                 stast = "drop";
             }
-            var heightStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits"><i> <img src="images/'+stats+'.png" alt="" width="16" height="16"></i> '+v.height+' <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>';
+            var heightStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits"> '+v.height+' <i style="color: #9099B7">kg</i></label><div class="clear"></div></a></li>';
             $('ul.height-list').append(heightStr);
         });
         
         $.each(bmiJSON, function(i,v){
             var date = v.date;
             date = date.split(" ");
-            var stats = "unchanged";
-            if (v.bmi > v.bmi){
-                stats = "increase";
-            }else if (v.bmi < v.bmi){
-                stast = "drop";
+            var level = '';
+            var user_bmi = v.bmi
+            if (user_bmi > 30) {
+                level = 'obese';
+            } 
+            if (user_bmi <= 29.9) {
+                level = 'lebih';
+            } 
+            if (user_bmi <= 24.9) {
+                level = 'normal';
+            } 
+            if (user_bmi <= 18) {
+                level = 'kurang';
             }
-            var bmiStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits">healthy <i style="color: #9099B7">'+v.bmi+'</i> <i> <img src="images/unchanged.png" alt="" width="16" height="16"></i></label><div class="clear"></div></a></li>';
+            var bmiStr = '<li><a href="#"><span class="day_name">'+date[0]+'</span>&nbsp; '+date[1]+' '+date[2]+' <label class="digits">'+level+' <i style="color: #9099B7">'+v.bmi+'</i> </label><div class="clear"></div></a></li>';
             $('ul.bmi-list').append(bmiStr);
         });
         
@@ -200,24 +208,24 @@ $(document).ready(function () {
     $('.save-medicine').on('click', function(){
         if(confirm("Simpan nota ubat?")){
             var medicineName = $('input[name=medicine_name]').val();
-            var medicineHour = $('input[name=medicine_hour]').val();
-            var medicineMinute = $('input[name=medicine_minute]').val();
-            var medicine24 = "AM";
-            if(medicineHour >= 12){
-                if(medicineHour != 12){
-                    medicineHour = medicineHour - 12;
-                }
-                
-                medicine24 = "PM";
-            }
-            var medicineTime = medicineHour+":"+medicineMinute;
+            var medicineTime = $('input[name=medicine_time]').val();
+            var medicineDos = $('input[name=medicine_dos]').val();
+//            var medicine24 = "AM";
+//            if(medicineHour >= 12){
+//                if(medicineHour != 12){
+//                    medicineHour = medicineHour - 12;
+//                }
+//                
+//                medicine24 = "PM";
+//            }
+//            var medicineTime = medicineHour+":"+medicineMinute;
             if(localStorage.getItem('MH_user_medicine_note') != null){
                 var medicineJSON = JSON.parse(localStorage.getItem('MH_user_medicine_note'));
-                medicineJSON.push({time : ""+medicineTime, meridian: medicine24, medicine_name : medicineName});
+                medicineJSON.push({time : ""+medicineTime, dos: medicineDos, medicine_name : medicineName});
 
                 localStorage.setItem("MH_user_medicine_note", JSON.stringify(medicineJSON));
             }else{
-                var medicineJSON = '[{"time" : "'+medicineTime+'", "meridian": "'+medicine24+'","medicine_name" : "'+medicineName+'"}]';
+                var medicineJSON = '[{"time" : "'+medicineTime+'", "dos": "'+medicineDos+'","medicine_name" : "'+medicineName+'"}]';
                 localStorage.setItem("MH_user_medicine_note", medicineJSON);
             }
             updateMedicineNote();
@@ -237,24 +245,24 @@ $(document).ready(function () {
             
             $('.medicine-list').html("");
             
-            var currentTime = new Date();
-            var newArr = [];
-            
+//            var currentTime = new Date();
+//            var newArr = [];
+//            
+//            $.each(medicineJSON, function(i,v){
+//                time = v.time.split(":");
+//                
+//            });
             $.each(medicineJSON, function(i,v){
-                time = v.time.split(":");
-                
-            });
-            $.each(medicineJSON, function(i,v){
-                time = v.time.split(":");
-                if(time[0].length == 1){
-                    time[0] = "0"+time[0];
-                }
-                if(time[1].length == 1){
-                    time[1] = "0"+time[1];
-                }
-                time = time.join(":");
+//                time = v.time.split(":");
+//                if(time[0].length == 1){
+//                    time[0] = "0"+time[0];
+//                }
+//                if(time[1].length == 1){
+//                    time[1] = "0"+time[1];
+//                }
+//                time = time.join(":");
                 if(i >= 0){
-                    var medicineStr = '<li><a href="#edit-medicine"> <label class="digits">'+time+'<em>'+v.meridian+'</em></label> <label style="color: #fff;margin: 0 15px 0 0;width: 15em; overflow: hidden;text-overflow: ellipsis;">'+v.medicine_name+'</label> <div class="clear"></div></a> </li>';
+                    var medicineStr = '<li><a href="#edit-medicine" data-id='+i+'> <label class="digits">'+v.dos+' / '+v.time+' kali sehari</label> <label style="color: #fff;margin: 0 15px 0 0;width: 17em; overflow: hidden;text-overflow: ellipsis;">'+v.medicine_name+'</label> <div class="clear"></div></a> </li>';
                     $('.medicine-list').append(medicineStr);
                 }
 //                }else{
@@ -264,6 +272,90 @@ $(document).ready(function () {
             });
         }
     }
+    
+    $('a[href=#edit-medicine]').each(function(){
+       $(this).on('click', function(){
+          var id = $(this).attr('data-id'); 
+            var medicineJSON = JSON.parse(localStorage.getItem('MH_user_medicine_note'));
+           
+           $.each(medicineJSON, function(i,v){
+               if(i == id){
+                   $('#edit-medicine input[name=medicine_id]').attr('value',id);
+                   $('#edit-medicine input[name=medicine_name]').attr('value',v.medicine_name);
+                   $('#edit-medicine input[name=medicine_time]').attr('value',v.time);
+                   $('#edit-medicine input[name=medicine_dos]').attr('value',v.dos);
+               }
+           });
+       });
+    });
+    
+    $('a.update-medicine').on('click', function(){
+        if(confirm("Kemaskini nota ubat?")){
+            var id = $('#edit-medicine input[name=medicine_id]').attr('value');
+            var medicineName = $('#edit-medicine input[name=medicine_name]').val();
+            var medicineTime = $('#edit-medicine input[name=medicine_time]').val();
+            var medicineDos = $('#edit-medicine input[name=medicine_dos]').val();
+            var medicineJSON = JSON.parse(localStorage.getItem('MH_user_medicine_note'));
+
+            $.each(medicineJSON, function(i,v){
+                if(i == id){
+                    v.medicine_name = medicineName;
+                    v.time = medicineTime;
+                    v.dos = medicineDos;
+                }
+            });
+
+            localStorage.setItem('MH_user_medicine_note', JSON.stringify(medicineJSON));
+            updateMedicineNote();
+            $.mobile.navigate('#medicine');
+        }
+    });
+    
+    $('#diet #myRange').on('change', function(){
+       var size = $(this).val();
+        $('.tweets_list .more').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    $('#hypertension #myRange').on('change', function(){
+       var size = $(this).val();
+        $('#hypertension .temp_list').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    $('#diabetes #myRange').on('change', function(){
+       var size = $(this).val();
+        $('#diabetes .temp_list').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    $('#cholesterol #myRange').on('change', function(){
+       var size = $(this).val();
+        $('#cholesterol .temp_list').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    $('#heart #myRange').on('change', function(){
+       var size = $(this).val();
+        $('#heart .temp_list').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    $('#cancer #myRange').on('change', function(){
+       var size = $(this).val();
+        $('#cancer .temp_list').attr('style', 'font-size:1.'+ size +'em');
+    });
+    
+    var user_bmi = localStorage.getItem('MH_user_bmi');
+    user_bmi = JSON.parse(user_bmi);
+    if (user_bmi[0].bmi > 30) {
+        $('#bmi_icon').attr('src','images/obese.png');
+    } 
+    if (user_bmi[0].bmi <= 29.9) {
+        $('#bmi_icon').attr('src','images/over.png');
+    } 
+    if (user_bmi[0].bmi <= 24.9) {
+        $('#bmi_icon').attr('src','images/normal.png');
+    } 
+    if (user_bmi[0].bmi <= 18) {
+        $('#bmi_icon').attr('src','images/kurang.png');
+    }
+    
     // assuming you've got the appropriate language files,
     // clndr will respect whatever moment's language is set to.
     // moment.lang('ru');
